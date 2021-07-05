@@ -28,7 +28,7 @@ def My_jieba(num):
     print(len(names['data_list_' + str(num)]))
 
 def return_list():
-    data_list = list()
+    data_list = data_list_1
     p1 = Process(target=My_jieba, args=(1,))
     p2 = Process(target=My_jieba, args=(2,))
     p3 = Process(target=My_jieba, args=(3,))
@@ -53,7 +53,7 @@ def return_list():
     p6.join()
     p7.join()
     p8.join()
-    for i in range(1,9):
+    for i in range(2,9):
         data_list.extend(names['data_list_' + str(i)])
     return data_list
 def main():
